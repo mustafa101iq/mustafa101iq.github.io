@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mustafa Q. Yassin | Flutter Mobile Application Developer</title>
+  <meta name="description" content="Portfolio of Mustafa Q. Yassin — Flutter Mobile Application Developer. Building high-quality, scalable mobile apps for Android & iOS.">
+  <meta name="keywords" content="Flutter, Dart, Mobile Developer, Android, iOS, Firebase, GetX, Portfolio">
+  <meta name="author" content="Mustafa Q. Yassin">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mustafa Q. Yassin | Flutter Mobile Application Developer">
+  <meta property="og:description" content="Professional Flutter developer crafting polished mobile experiences for Android & iOS.">
+  <meta property="og:image" content="icons/Icon-512.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mustafa Q. Yassin | Flutter Mobile Application Developer">
+  <meta name="twitter:description" content="Professional Flutter developer crafting polished mobile experiences for Android & iOS.">
+
+  <meta name="theme-color" content="#0a0403">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Mustafa Q. Yassin">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    body {
+      margin: 0;
+      background: #0a0403;
+      overflow: hidden;
+    }
+    .boot {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      background: #0a0403;
+      z-index: 9999;
+      transition: opacity 0.35s ease;
+    }
+    .boot.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .ring {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid rgba(232, 48, 42, 0.15);
+      border-top-color: #e8302a;
+      animation: spin 0.9s linear infinite;
+      will-change: transform;
+    }
+    .mark {
+      position: absolute;
+      font: 700 12px/1 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.08em;
+      color: #e8302a;
+    }
+    .wrap {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+    }
+    .label {
+      color: #7a5f5c;
+      font: 600 11px/1 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.35em;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="boot" id="loading">
+    <div class="wrap">
+      <div class="ring"></div>
+      <span class="mark">MQ</span>
+    </div>
+    <div class="label">LOADING</div>
+  </div>
+  <script>
+    (async function () {
+      var BUILD = '1.0.2+4';
+      var KEY = 'pf_build';
+      var prev = null;
+      try { prev = localStorage.getItem(KEY); } catch (e) {}
+      try {
+        if ('serviceWorker' in navigator) {
+          var regs = await navigator.serviceWorker.getRegistrations();
+          for (var i = 0; i < regs.length; i++) await regs[i].unregister();
+        }
+        if (window.caches) {
+          var keys = await caches.keys();
+          await Promise.all(keys.map(function (k) { return caches.delete(k); }));
+        }
+      } catch (e) {}
+      if (prev !== BUILD) {
+        try {
+          localStorage.clear();
+          sessionStorage.clear();
+          localStorage.setItem(KEY, BUILD);
+        } catch (e) {}
+        if (prev) {
+          location.reload();
+          return;
+        }
+      }
+
+      window.__portfolioVisits = null;
+      window.getPortfolioVisits = function () {
+        return window.__portfolioVisits;
+      };
+      (function trackVisits() {
+        var host = location.hostname || '';
+        if (host !== 'mustafa101iq.github.io' && host !== 'www.mustafa101iq.github.io') {
+          return;
+        }
+        var urls = [
+          'https://countapi.mileshilliard.com/api/v1/hit/mustafa101iq_github_io_portfolio',
+          'https://abacus.jasoncameron.dev/hit/mustafa101iq_github_io/portfolio_visits'
+        ];
+        function apply(value) {
+          var n = Number(value);
+          if (!isFinite(n)) return;
+          window.__portfolioVisits = n;
+          try {
+            window.dispatchEvent(new CustomEvent('portfolio-visits', { detail: n }));
+          } catch (e) {}
+        }
+        function tryHit(i) {
+          if (i >= urls.length) return;
+          fetch(urls[i], { method: 'GET', mode: 'cors', cache: 'no-store' })
+            .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+            .then(function (d) { apply(d && d.value); })
+            .catch(function () { tryHit(i + 1); });
+        }
+        tryHit(0);
+      })();
+    })();
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('loading');
+      if (!el) return;
+      el.classList.add('hide');
+      setTimeout(function () { el.remove(); }, 380);
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

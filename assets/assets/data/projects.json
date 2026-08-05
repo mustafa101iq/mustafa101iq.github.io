@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "title": {
+      "en": "Shaghilni Iraq",
+      "ar": "شغلني العراق"
+    },
+    "description": {
+      "en": "A private-sector job marketplace in Iraq connecting employers with job seekers — browse jobs, apply, post vacancies, build CVs, and access learning courses.",
+      "ar": "منصة توظيف للقطاع الخاص في العراق تربط أصحاب العمل بالباحثين عن عمل — تصفح الوظائف، التقديم، نشر الشواغر، إنشاء السيرة الذاتية، وكورسات تعليمية."
+    },
+    "imageUrl": "assets/images/projects/shaghilni/screenshot_01.jpg",
+    "images": [
+      "assets/images/projects/shaghilni/screenshot_01.jpg",
+      "assets/images/projects/shaghilni/screenshot_02.jpg",
+      "assets/images/projects/shaghilni/screenshot_03.jpg"
+    ],
+    "visualStyle": "device",
+    "technologies": [
+      {"en": "Flutter", "ar": "فلاتر"},
+      {"en": "GetX", "ar": "GetX"},
+      {"en": "Firebase", "ar": "فايربيس"},
+      {"en": "Provider", "ar": "Provider"},
+      {"en": "Dio", "ar": "Dio"},
+      {"en": "SQLite", "ar": "SQLite"}
+    ],
+    "liveDemoUrl": "https://play.google.com/store/apps/details?id=com.alhamdany.mustafa.shqlny_aliraq1",
+    "githubUrl": "",
+    "details": {
+      "en": "Production Flutter app on Google Play and the App Store (+100K downloads). Job browsing and applications, employer posting, candidate profiles, CV builder with PDF export (Arabic/English), educational courses, Google Maps & location, Firebase Auth/Firestore/Messaging/Storage/Functions, push notifications, ads, and bilingual UI. Stack: GetX, Provider, Dio, SQLite, and Firebase.",
+      "ar": "تطبيق فلاتر إنتاجي على Google Play وApp Store (+100 ألف تنزيل). عرض الوظائف والتقديم، إضافة وظائف من أصحاب العمل، ملفات الباحثين عن عمل، سيرة ذاتية PDF بالعربية والإنجليزية، كورسات تعليمية، خرائط جوجل والموقع، Firebase للمصادقة وFirestore والرسائل والتخزين والدوال، إشعارات، إعلانات، ودعم لغتين. التقنيات: GetX وProvider وDio وSQLite وFirebase."
+    }
+  },
+  {
+    "id": "2",
+    "title": {
+      "en": "Alwessam Express",
+      "ar": "الوسام اكسبريس"
+    },
+    "description": {
+      "en": "Shop from China, ship with confidence, track orders in real time, and pay cash on delivery — shopping and logistics in one app.",
+      "ar": "اشترِ من الصين واشحن بثقة، تتبّع طلبك لحظيًا، وادفع عند الاستلام — تسوق وشحن في تطبيق واحد."
+    },
+    "imageUrl": "assets/images/projects/alwessam/cover.jpg",
+    "images": [
+      "assets/images/projects/alwessam/cover.jpg",
+      "assets/images/projects/alwessam/cover_02.jpg",
+      "assets/images/projects/alwessam/cover_03.jpg"
+    ],
+    "visualStyle": "cover",
+    "technologies": [
+      {"en": "Flutter", "ar": "فلاتر"},
+      {"en": "GetX", "ar": "GetX"},
+      {"en": "ScreenUtil", "ar": "ScreenUtil"},
+      {"en": "Dio", "ar": "Dio"},
+      {"en": "Firebase", "ar": "فايربيس"},
+      {"en": "OneSignal", "ar": "OneSignal"}
+    ],
+    "liveDemoUrl": "https://play.google.com/store/apps/details?id=com.hussein.majid.trading",
+    "githubUrl": "",
+    "details": {
+      "en": "Flutter shopping & shipping app (10K+ downloads on Play Store, also on App Store). Browse and order products, live shipment tracking from order to delivery, cash on delivery, customer support via Freshchat, barcode scanning, PDF view/print, deep links, Firebase Messaging, OneSignal, and Pusher realtime. Built with GetX modules, ScreenUtil, DioClient, and GetStorage.",
+      "ar": "تطبيق فلاتر للتسوق والشحن (أكثر من 10 آلاف تنزيل على Play Store ومتاح على App Store). تصفح المنتجات والطلب، تتبع الشحنة من الطلب حتى التسليم، الدفع عند الاستلام، دعم العملاء عبر Freshchat، مسح باركود، عرض وطباعة PDF، روابط عميقة، Firebase Messaging وOneSignal وPusher. مبني بموديولات GetX وScreenUtil وDioClient وGetStorage."
+    }
+  }
+]
