@@ -11,6 +11,7 @@ import 'package:portfolio_website/core/services/font_bootstrap.dart';
 import 'package:portfolio_website/core/services/localization_service.dart';
 import 'package:portfolio_website/core/services/portfolio_bootstrap.dart';
 import 'package:portfolio_website/core/services/theme_service.dart';
+import 'package:portfolio_website/core/services/visit_counter_service.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 Future<void> main() async {
@@ -26,6 +27,7 @@ Future<void> main() async {
   final localizationService = await LocalizationService().init();
   Get.put<ThemeService>(themeService, permanent: true);
   Get.put<LocalizationService>(localizationService, permanent: true);
+  Get.put<VisitCounterService>(VisitCounterService(), permanent: true);
   runApp(const PortfolioApp());
 }
 

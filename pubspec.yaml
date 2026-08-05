@@ -1,7 +1,7 @@
 name: portfolio_website
 description: "Professional Flutter Developer Portfolio Website"
 publish_to: 'none'
-version: 1.0.1+2
+version: 1.0.2+3
 
 environment:
   sdk: ^3.11.5
@@ -17,6 +17,7 @@ dependencies:
   font_awesome_flutter: ^10.8.0
   visibility_detector: ^0.4.0+2
   get_storage: ^2.1.1
+  http: ^1.6.0
 
 dev_dependencies:
   flutter_test:
