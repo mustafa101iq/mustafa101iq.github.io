@@ -97,7 +97,7 @@
   </div>
   <script>
     (async function () {
-      var BUILD = '1.0.2+3';
+      var BUILD = '1.0.2+4';
       var KEY = 'pf_build';
       var prev = null;
       try { prev = localStorage.getItem(KEY); } catch (e) {}
@@ -122,6 +122,37 @@
           return;
         }
       }
+
+      window.__portfolioVisits = null;
+      window.getPortfolioVisits = function () {
+        return window.__portfolioVisits;
+      };
+      (function trackVisits() {
+        var host = location.hostname || '';
+        if (host !== 'mustafa101iq.github.io' && host !== 'www.mustafa101iq.github.io') {
+          return;
+        }
+        var urls = [
+          'https://countapi.mileshilliard.com/api/v1/hit/mustafa101iq_github_io_portfolio',
+          'https://abacus.jasoncameron.dev/hit/mustafa101iq_github_io/portfolio_visits'
+        ];
+        function apply(value) {
+          var n = Number(value);
+          if (!isFinite(n)) return;
+          window.__portfolioVisits = n;
+          try {
+            window.dispatchEvent(new CustomEvent('portfolio-visits', { detail: n }));
+          } catch (e) {}
+        }
+        function tryHit(i) {
+          if (i >= urls.length) return;
+          fetch(urls[i], { method: 'GET', mode: 'cors', cache: 'no-store' })
+            .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+            .then(function (d) { apply(d && d.value); })
+            .catch(function () { tryHit(i + 1); });
+        }
+        tryHit(0);
+      })();
     })();
     window.addEventListener('flutter-first-frame', function () {
       var el = document.getElementById('loading');

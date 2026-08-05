@@ -1,38 +1,57 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:portfolio_website/core/services/visit_counter_bridge.dart';
 
 class VisitCounterService extends GetxService {
-  static const _namespace = 'mustafa101iq.github.io';
-  static const _key = 'portfolio_visits';
-  static const _primaryUrl =
-      'https://abacus.jasoncameron.dev/hit/$_namespace/$_key';
-  static const _fallbackUrl =
+  static const _hitUrl =
       'https://countapi.mileshilliard.com/api/v1/hit/mustafa101iq_github_io_portfolio';
+  static const _getUrl =
+      'https://countapi.mileshilliard.com/api/v1/get/mustafa101iq_github_io_portfolio';
+  static const _abacusHitUrl =
+      'https://abacus.jasoncameron.dev/hit/mustafa101iq_github_io/portfolio_visits';
 
   final RxnInt totalVisits = RxnInt();
 
   @override
   void onInit() {
     super.onInit();
-    if (kIsWeb && _shouldCount) {
-      recordVisit();
+    if (!kIsWeb) return;
+    bindJsVisitCounter(_applyCount);
+    unawaited(_bootstrap());
+  }
+
+  Future<void> _bootstrap() async {
+    final fromJs = readJsVisitCount();
+    if (fromJs != null) {
+      _applyCount(fromJs);
+      return;
     }
-  }
 
-  bool get _shouldCount {
-    final host = Uri.base.host;
-    return host == 'mustafa101iq.github.io' ||
-        host == 'www.mustafa101iq.github.io';
-  }
+    for (var i = 0; i < 16; i++) {
+      await Future<void>.delayed(const Duration(milliseconds: 250));
+      final count = readJsVisitCount();
+      if (count != null) {
+        _applyCount(count);
+        return;
+      }
+    }
 
-  Future<void> recordVisit() async {
-    final count = await _hit(_primaryUrl) ?? await _hit(_fallbackUrl);
+    final count = await _hit(_hitUrl) ??
+        await _hit(_abacusHitUrl) ??
+        await _hit(_getUrl);
     if (count != null) {
-      totalVisits.value = count;
+      _applyCount(count);
     }
+  }
+
+  void _applyCount(int count) {
+    if (count < 0) return;
+    if (totalVisits.value == count) return;
+    totalVisits.value = count;
   }
 
   Future<int?> _hit(String url) async {
@@ -44,12 +63,11 @@ class VisitCounterService extends GetxService {
         return null;
       }
       final body = jsonDecode(response.body);
-      if (body is Map) {
-        final value = body['value'];
-        if (value is int) return value;
-        if (value is num) return value.toInt();
-        if (value is String) return int.tryParse(value);
-      }
+      if (body is! Map) return null;
+      final value = body['value'];
+      if (value is int) return value;
+      if (value is num) return value.toInt();
+      if (value is String) return int.tryParse(value);
     } catch (e) {
       debugPrint('VisitCounterService: $e');
     }

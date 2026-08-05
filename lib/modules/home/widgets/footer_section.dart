@@ -59,20 +59,20 @@ class FooterSection extends GetView<HomeController> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            if (visits != null) ...[
-              SizedBox(height: 10.h),
-              Text(
-                'total_visits'.trParams({
-                  'count': _formatCount(visits),
-                }),
-                textAlign: TextAlign.center,
-                style: AppFonts.arabic(
-                  color: isDark ? AppColors.mutedDim : AppColors.lightMuted,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+            SizedBox(height: 10.h),
+            Text(
+              visits == null
+                  ? 'total_visits'.trParams({'count': '…'})
+                  : 'total_visits'.trParams({
+                      'count': _formatCount(visits),
+                    }),
+              textAlign: TextAlign.center,
+              style: AppFonts.arabic(
+                color: isDark ? AppColors.muted : AppColors.lightMuted,
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
               ),
-            ],
+            ),
           ],
         ),
       );
