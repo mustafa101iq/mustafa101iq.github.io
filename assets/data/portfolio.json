@@ -1,0 +1,398 @@
+{
+  "profile": {
+    "fullName": {
+      "en": "Mustafa Q. Yassin",
+      "ar": "مصطفى ق. ياسين"
+    },
+    "jobTitle": {
+      "en": "Flutter Mobile Application Developer",
+      "ar": "مطوّر تطبيقات جوال بفلاتر"
+    },
+    "shortBio": {
+      "en": "Flutter mobile developer with 10+ years in software — from Android Native to high-performance cross-platform apps shipped to the stores.",
+      "ar": "مطوّر تطبيقات هواتف متخصص في Flutter بخبرة أكثر من عشر سنوات — من Android Native إلى تطبيقات عالية الأداء متعددة المنصات."
+    },
+    "avatarUrl": "assets/images/profile.jpg",
+    "yearsOfExperience": 10,
+    "email": "m.dev2230@gmail.com",
+    "phone": "07715456704",
+    "location": {
+      "en": "Diyala, Iraq",
+      "ar": "العراق، ديالى"
+    },
+    "cvUrl": "https://example.com/cv.pdf",
+    "social": {
+      "github": "https://github.com/m.dev97",
+      "linkedin": "https://www.linkedin.com/in/m.dev97",
+      "instagram": "https://www.instagram.com/m.dev97",
+      "whatsapp": "https://wa.me/9647715456704",
+      "telegram": "https://t.me/m.dev97",
+      "email": "mailto:m.dev2230@gmail.com"
+    }
+  },
+  "about": {
+    "intro": {
+      "en": "I'm Mustafa Q. Yassin, a mobile app developer specialized in Flutter with more than ten years of software development experience. I began my career building Android Native apps, then moved to Flutter to deliver high-performance applications that run efficiently across platforms from a single codebase.\n\nThroughout my career, I have built diverse digital solutions — including job platforms, e-commerce, shipping and logistics, as well as custom business systems serving thousands of users. I focus on stable, scalable, and maintainable products, following strong engineering practices.",
+      "ar": "أنا مصطفى ق. ياسين، مطوّر تطبيقات هواتف متخصص في Flutter بخبرة تمتد لأكثر من عشر سنوات في تطوير البرمجيات. بدأت مسيرتي مع تطوير تطبيقات Android Native، ثم انتقلت إلى Flutter لبناء تطبيقات عالية الأداء تعمل بكفاءة على منصات متعددة من قاعدة كود واحدة.\n\nخلال مسيرتي طوّرت حلولًا رقمية متنوعة، تشمل منصات التوظيف، والتجارة الإلكترونية، والشحن والخدمات اللوجستية، بالإضافة إلى أنظمة أعمال مخصصة تخدم آلاف المستخدمين. أركز على بناء منتجات مستقرة، قابلة للتوسع، وسهلة الصيانة، مع الالتزام بأفضل الممارسات الهندسية."
+    },
+    "specialization": {
+      "en": "Cross-platform mobile apps with Flutter for Android and iOS — Clean Architecture, GetX, REST APIs, Firebase, and store publishing",
+      "ar": "تطوير تطبيقات جوال متعددة المنصات بفلاتر لأندرويد وآيفون، مع هندسة نظيفة وإدارة حالة وربط الخدمات والنشر على المتاجر"
+    },
+    "strengths": [
+      {
+        "en": "10+ years of mobile expertise — from Android Native to production Flutter apps on Android & iOS",
+        "ar": "أكثر من 10 سنوات خبرة في الجوال — من Android Native إلى تطبيقات Flutter إنتاجية على Android وiOS"
+      },
+      {
+        "en": "Shipped real products used by tens of thousands of users (Play Store & App Store)",
+        "ar": "إطلاق منتجات حقيقية يستخدمها عشرات الآلاف على Google Play وApp Store"
+      },
+      {
+        "en": "Clean Architecture with GetX modules — scalable, testable, and maintainable codebases",
+        "ar": "هندسة نظيفة بموديولات GetX — قواعد شيفرة قابلة للتوسع والاختبار والصيانة"
+      },
+      {
+        "en": "End-to-end ownership: UI/UX, state management, networking, and store release",
+        "ar": "ملكية كاملة للمشروع: الواجهات، إدارة الحالة، الشبكات، والنشر على المتاجر"
+      },
+      {
+        "en": "Strong backend collaboration — REST APIs, Firebase, and ASP.NET (.NET) when needed",
+        "ar": "تعاون قوي مع الـ Back-End — REST وFirebase وASP.NET (.NET) عند الحاجة"
+      },
+      {
+        "en": "Pixel-perfect, RTL-ready Arabic/English interfaces with ScreenUtil responsiveness",
+        "ar": "واجهات دقيقة تدعم العربية والإنجليزية (RTL) مع تصميم متجاوب بـ ScreenUtil"
+      },
+      {
+        "en": "Reliable delivery under freelance and remote team environments",
+        "ar": "تسليم موثوق في بيئات العمل الحر والفرق عن بُعد"
+      },
+      {
+        "en": "Performance-minded development — smooth UX, lean networking, and production stability",
+        "ar": "تطوير موجّه للأداء — تجربة سلسة، شبكات محسّنة، واستقرار في الإنتاج"
+      }
+    ],
+    "workStyle": {
+      "en": "I own the full product development cycle — from requirements analysis and Clean Architecture planning, through smooth UI and strong UX, integrating REST APIs and Firebase, to testing, releasing on Google Play and the App Store, and providing ongoing post-launch support.\n\nI believe software quality is not only about writing code, but about understanding client needs, clear communication, meeting deadlines, and delivering practical solutions that create real value for users and businesses.",
+      "ar": "أتولى دورة تطوير المنتج كاملة، بدءًا من تحليل المتطلبات وتخطيط البنية البرمجية (Clean Architecture)، مرورًا بتطوير واجهات مستخدم سلسة وتجربة استخدام متميزة، وربط الخدمات وواجهات REST APIs وFirebase، وصولًا إلى اختبار التطبيق، ونشره على متجري Google Play وApp Store، وتقديم الدعم المستمر بعد الإطلاق.\n\nأؤمن بأن جودة البرمجيات لا تعتمد على كتابة الكود فقط، بل على فهم احتياجات العميل، والتواصل الواضح، والالتزام بالمواعيد، وتقديم حلول عملية تحقق قيمة حقيقية للمستخدمين والأعمال."
+    }
+  },
+  "skills": [
+    {
+      "name": {"en": "Flutter", "ar": "Flutter"},
+      "level": 0.96,
+      "category": {"en": "Core", "ar": "أساسي"}
+    },
+    {
+      "name": {"en": "Dart", "ar": "Dart"},
+      "level": 0.94,
+      "category": {"en": "Core", "ar": "أساسي"}
+    },
+    {
+      "name": {"en": "Android Native", "ar": "Android Native"},
+      "level": 0.86,
+      "category": {"en": "Core", "ar": "أساسي"}
+    },
+    {
+      "name": {"en": "Java", "ar": "Java"},
+      "level": 0.88,
+      "category": {"en": "Core", "ar": "أساسي"}
+    },
+    {
+      "name": {"en": "Kotlin", "ar": "Kotlin"},
+      "level": 0.85,
+      "category": {"en": "Core", "ar": "أساسي"}
+    },
+    {
+      "name": {"en": "GetX", "ar": "GetX"},
+      "level": 0.95,
+      "category": {"en": "State & Architecture", "ar": "الحالة والهندسة"}
+    },
+    {
+      "name": {"en": "Provider", "ar": "Provider"},
+      "level": 0.88,
+      "category": {"en": "State & Architecture", "ar": "الحالة والهندسة"}
+    },
+    {
+      "name": {"en": "Bloc", "ar": "Bloc"},
+      "level": 0.84,
+      "category": {"en": "State & Architecture", "ar": "الحالة والهندسة"}
+    },
+    {
+      "name": {"en": "Clean Architecture", "ar": "الهندسة النظيفة"},
+      "level": 0.92,
+      "category": {"en": "State & Architecture", "ar": "الحالة والهندسة"}
+    },
+    {
+      "name": {"en": "MVVM", "ar": "MVVM"},
+      "level": 0.88,
+      "category": {"en": "State & Architecture", "ar": "الحالة والهندسة"}
+    },
+    {
+      "name": {"en": "ScreenUtil", "ar": "ScreenUtil"},
+      "level": 0.94,
+      "category": {"en": "UI & UX", "ar": "الواجهات"}
+    },
+    {
+      "name": {"en": "Responsive UI", "ar": "واجهات متجاوبة"},
+      "level": 0.93,
+      "category": {"en": "UI & UX", "ar": "الواجهات"}
+    },
+    {
+      "name": {"en": "RTL & Localization", "ar": "RTL والتعريب"},
+      "level": 0.93,
+      "category": {"en": "UI & UX", "ar": "الواجهات"}
+    },
+    {
+      "name": {"en": "Material Design", "ar": "Material Design"},
+      "level": 0.9,
+      "category": {"en": "UI & UX", "ar": "الواجهات"}
+    },
+    {
+      "name": {"en": "Figma to Flutter", "ar": "من Figma إلى Flutter"},
+      "level": 0.86,
+      "category": {"en": "UI & UX", "ar": "الواجهات"}
+    },
+    {
+      "name": {"en": "Dio", "ar": "Dio"},
+      "level": 0.93,
+      "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
+    },
+    {
+      "name": {"en": "REST API", "ar": "REST API"},
+      "level": 0.92,
+      "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
+    },
+    {
+      "name": {"en": "Firebase", "ar": "Firebase"},
+      "level": 0.9,
+      "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
+    },
+    {
+      "name": {"en": "SQLite / Local DB", "ar": "SQLite / قاعدة محلية"},
+      "level": 0.86,
+      "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
+    },
+    {
+      "name": {"en": "GetStorage", "ar": "GetStorage"},
+      "level": 0.9,
+      "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
+    },
+    {
+      "name": {"en": "OneSignal / Push", "ar": "OneSignal / إشعارات"},
+      "level": 0.85,
+      "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
+    },
+    {
+      "name": {"en": "ASP.NET (.NET)", "ar": "ASP.NET (.NET)"},
+      "level": 0.8,
+      "category": {"en": "Backend", "ar": "الخلفية"}
+    },
+    {
+      "name": {"en": "Google Maps", "ar": "خرائط جوجل"},
+      "level": 0.84,
+      "category": {"en": "Integrations", "ar": "التكاملات"}
+    },
+    {
+      "name": {"en": "PDF & Printing", "ar": "PDF والطباعة"},
+      "level": 0.82,
+      "category": {"en": "Integrations", "ar": "التكاملات"}
+    },
+    {
+      "name": {"en": "Git & GitHub", "ar": "Git وGitHub"},
+      "level": 0.92,
+      "category": {"en": "Tools & Delivery", "ar": "الأدوات والتسليم"}
+    },
+    {
+      "name": {"en": "Play Store & App Store", "ar": "Play Store وApp Store"},
+      "level": 0.91,
+      "category": {"en": "Tools & Delivery", "ar": "الأدوات والتسليم"}
+    },
+    {
+      "name": {"en": "CI / Release Workflow", "ar": "CI / سير الإطلاق"},
+      "level": 0.8,
+      "category": {"en": "Tools & Delivery", "ar": "الأدوات والتسليم"}
+    }
+  ],
+  "services": [
+    {
+      "title": {
+        "en": "Flutter App Development",
+        "ar": "تطوير تطبيقات Flutter"
+      },
+      "description": {
+        "en": "End-to-end development of high-quality Android & iOS apps with Flutter.",
+        "ar": "تطوير شامل لتطبيقات Android وiOS عالية الجودة باستخدام Flutter."
+      },
+      "icon": "phone_android"
+    },
+    {
+      "title": {
+        "en": "Professional UI Design",
+        "ar": "تصميم واجهات احترافية"
+      },
+      "description": {
+        "en": "Modern, accessible interfaces that feel native and delightful to use.",
+        "ar": "واجهات حديثة وسهلة الوصول تبدو أصلية وممتعة في الاستخدام."
+      },
+      "icon": "palette"
+    },
+    {
+      "title": {
+        "en": "Firebase Integration",
+        "ar": "ربط Firebase"
+      },
+      "description": {
+        "en": "Auth, Firestore, Cloud Messaging, Storage, and Analytics setup.",
+        "ar": "إعداد المصادقة وFirestore والرسائل السحابية والتخزين والتحليلات."
+      },
+      "icon": "cloud"
+    },
+    {
+      "title": {
+        "en": "REST API Integration",
+        "ar": "ربط REST APIs"
+      },
+      "description": {
+        "en": "Secure, efficient API layers with proper error handling and caching.",
+        "ar": "طبقات API آمنة وفعّالة مع معالجة أخطاء وتخزين مؤقت مناسب."
+      },
+      "icon": "api"
+    },
+    {
+      "title": {
+        "en": "App Store Publishing",
+        "ar": "النشر على المتاجر"
+      },
+      "description": {
+        "en": "Full release support for Google Play and the Apple App Store.",
+        "ar": "دعم كامل للنشر على Google Play وApple App Store."
+      },
+      "icon": "store"
+    },
+    {
+      "title": {
+        "en": "Maintenance & Updates",
+        "ar": "صيانة وتحديثات"
+      },
+      "description": {
+        "en": "Ongoing improvements, bug fixes, and feature upgrades for existing apps.",
+        "ar": "تحسينات مستمرة وإصلاح أخطاء وترقيات ميزات للتطبيقات الحالية."
+      },
+      "icon": "build"
+    }
+  ],
+  "experience": [
+    {
+      "role": {
+        "en": "Flutter Developer",
+        "ar": "مطوّر Flutter"
+      },
+      "company": {
+        "en": "Remote Software Company",
+        "ar": "شركة برمجيات (عن بُعد)"
+      },
+      "period": {
+        "en": "2025 — Present",
+        "ar": "2025 — حتى الآن"
+      },
+      "description": {
+        "en": "Building and shipping Flutter apps and software solutions for Android and iOS within a distributed product team.",
+        "ar": "تطوير وإطلاق تطبيقات Flutter وحلول برمجية لمنصتي Android وiOS ضمن فريق منتج يعمل عن بُعد."
+      }
+    },
+    {
+      "role": {
+        "en": "Full-Time Freelance Developer",
+        "ar": "مطوّر مستقل بدوام كامل"
+      },
+      "company": {
+        "en": "Freelance",
+        "ar": "عمل حر"
+      },
+      "period": {
+        "en": "2023 — 2025",
+        "ar": "2023 — 2025"
+      },
+      "description": {
+        "en": "Delivered end-to-end Flutter products while expanding into back-end development with ASP.NET (.NET), covering mobile apps, APIs, and production delivery.",
+        "ar": "تسليم منتجات Flutter متكاملة مع التوسع في تطوير الـ Back-End باستخدام ASP.NET (.NET)، شاملاً التطبيقات وواجهات الـ API والتسليم للإنتاج."
+      }
+    },
+    {
+      "role": {
+        "en": "Flutter Developer",
+        "ar": "مطوّر Flutter"
+      },
+      "company": {
+        "en": "Enjaz",
+        "ar": "إنجاز"
+      },
+      "period": {
+        "en": "2021 — 2023",
+        "ar": "2021 — 2023"
+      },
+      "description": {
+        "en": "Worked in a mobile development team delivering Flutter applications for Android and iOS, collaborating on features, quality, and release cycles.",
+        "ar": "عملت ضمن فريق تطوير تطبيقات الجوال لبناء تطبيقات Flutter لنظامي Android وiOS، مع التعاون على الميزات والجودة ودورات الإطلاق."
+      }
+    },
+    {
+      "role": {
+        "en": "Flutter Developer",
+        "ar": "مطوّر Flutter"
+      },
+      "company": {
+        "en": "Freelance",
+        "ar": "عمل حر"
+      },
+      "period": {
+        "en": "2020 — 2021",
+        "ar": "2020 — 2021"
+      },
+      "description": {
+        "en": "Transitioned fully to Flutter for cross-platform Android and iOS development, shipping client projects with a focus on clean UI and reliable delivery.",
+        "ar": "الانتقال بالكامل إلى Flutter لتطوير تطبيقات متعددة المنصات على Android وiOS، مع تسليم مشاريع للعملاء بتركيز على واجهات نظيفة وتسليم موثوق."
+      }
+    },
+    {
+      "role": {
+        "en": "Android Native Developer",
+        "ar": "مطوّر Android Native"
+      },
+      "company": {
+        "en": "Freelance",
+        "ar": "عمل حر"
+      },
+      "period": {
+        "en": "2016 — 2020",
+        "ar": "2016 — 2020"
+      },
+      "description": {
+        "en": "Independent Android development through self-directed learning and diverse freelance projects, building the foundation for a professional mobile career.",
+        "ar": "تطوير Android بشكل مستقل مع الاعتماد على التعلم الذاتي وتنفيذ مشاريع متنوعة، بما أسّس لمسيرة احترافية في تطوير تطبيقات الجوال."
+      }
+    }
+  ],
+  "education": [
+    {
+      "degree": {
+        "en": "Bachelor of Computer Science",
+        "ar": "بكالوريوس علوم حاسوب"
+      },
+      "institution": {
+        "en": "University of Diyala — College of Science",
+        "ar": "جامعة ديالى — كلية العلوم"
+      },
+      "period": {
+        "en": "—",
+        "ar": "—"
+      },
+      "description": {
+        "en": "Bachelor of Computer Science from the College of Science, University of Diyala.",
+        "ar": "بكالوريوس علوم حاسوب من كلية العلوم في جامعة ديالى."
+      }
+    }
+  ]
+}
