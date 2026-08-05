@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 class AppTranslations extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
-        'en_US': _en,
-        'en': _en,
-        'ar_SA': _ar,
-        'ar': _ar,
-      };
+    'en_US': _en,
+    'en': _en,
+    'ar_SA': _ar,
+    'ar': _ar,
+  };
 
   static const Map<String, String> _en = {
     'nav_home': 'Home',
@@ -18,10 +18,10 @@ class AppTranslations extends Translations {
     'nav_experience': 'Experience',
     'nav_education': 'Education',
     'nav_contact': 'Contact',
-    'hi_im': "Hi, I'm @name",
+    'hi_im': "Hi, I'm Mustafa",
     'job_title': 'Flutter Mobile Application Developer',
     'short_bio':
-        'Flutter mobile developer with 10+ years in software — from Android Native to high-performance cross-platform apps shipped to the stores.',
+        'Over ten years building production apps for Android and iOS — from native foundations to cross-platform products on the stores.',
     'download_cv': 'CV',
     'scroll': 'SCROLL',
     'section_about': 'Resume',
@@ -89,10 +89,10 @@ class AppTranslations extends Translations {
     'nav_experience': 'الخبرات',
     'nav_education': 'التعليم',
     'nav_contact': 'تواصل',
-    'hi_im': 'مرحبًا، أنا @name',
-    'job_title': 'مطوّر تطبيقات جوال بفلاتر',
+    'hi_im': 'مرحبًا، أنا مصطفى',
+    'job_title': 'مطوّر تطبيقات الهواتف الذكية',
     'short_bio':
-        'مطوّر تطبيقات هواتف متخصص في Flutter بخبرة أكثر من عشر سنوات — من Android Native إلى تطبيقات عالية الأداء متعددة المنصات.',
+        'أكثر من عشر سنوات في بناء تطبيقات أندرويد وآيفون جاهزة للإنتاج، من تطبيقات المنصة الواحدة إلى منتجات تعمل على أكثر من نظام ومنشورة على المتاجر.',
     'download_cv': 'السيرة الذاتية',
     'scroll': 'مرّر للأسفل',
     'section_about': 'السيرة الذاتية',

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:portfolio_website/core/services/localization_service.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_website/app/theme/app_fonts.dart';
 import 'package:portfolio_website/app/theme/app_colors.dart';
 import 'package:portfolio_website/app/utils/responsive.dart';
 import 'package:portfolio_website/core/widgets/glass_card.dart';
@@ -58,7 +59,7 @@ class EducationSection extends GetView<HomeController> {
                             children: [
                               Text(
                                 item.degree.text,
-                                style: GoogleFonts.tajawal(
+                                style: AppFonts.arabic(
                                   color: isDark
                                       ? AppColors.lightestSlate
                                       : AppColors.lightText,
@@ -69,7 +70,7 @@ class EducationSection extends GetView<HomeController> {
                               SizedBox(height: 4.h),
                               Text(
                                 item.institution.text,
-                                style: GoogleFonts.tajawal(
+                                style: AppFonts.arabic(
                                   color: accent,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
@@ -88,7 +89,7 @@ class EducationSection extends GetView<HomeController> {
                               SizedBox(height: 10.h),
                               Text(
                                 item.description.text,
-                                style: GoogleFonts.tajawal(
+                                style: AppFonts.arabic(
                                   color: isDark
                                       ? AppColors.slate
                                       : AppColors.lightMuted,

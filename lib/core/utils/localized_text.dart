@@ -4,9 +4,9 @@ String localizedText(dynamic value, {String fallback = ''}) {
   if (value == null) return fallback;
   if (value is String) return value;
   if (value is Map) {
-    final code = Get.locale?.languageCode ?? 'en';
+    final code = Get.locale?.languageCode ?? 'ar';
     final map = value.map((key, item) => MapEntry(key.toString(), item));
-    final selected = map[code] ?? map['en'] ?? map['ar'];
+    final selected = map[code] ?? map['ar'] ?? map['en'];
     if (selected is String) return selected;
   }
   return fallback;

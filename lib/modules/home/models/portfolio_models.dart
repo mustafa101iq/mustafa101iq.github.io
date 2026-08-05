@@ -10,7 +10,7 @@ class LocalizedField {
   String get text {
     final isArabic = Get.isRegistered<LocalizationService>()
         ? Get.find<LocalizationService>().isArabic
-        : (Get.locale?.languageCode == 'ar');
+        : (Get.locale?.languageCode ?? 'ar') == 'ar';
     return isArabic ? (ar.isNotEmpty ? ar : en) : (en.isNotEmpty ? en : ar);
   }
 

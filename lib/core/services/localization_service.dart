@@ -8,11 +8,11 @@ class LocalizationService extends GetxService {
   static const Locale arabic = Locale('ar', 'SA');
 
   final GetStorage _storage = GetStorage();
-  final Rx<Locale> locale = english.obs;
+  final Rx<Locale> locale = arabic.obs;
 
   Future<LocalizationService> init() async {
     final saved = _storage.read<String>(_key);
-    locale.value = saved == 'ar' ? arabic : english;
+    locale.value = saved == 'en' ? english : arabic;
     return this;
   }
 

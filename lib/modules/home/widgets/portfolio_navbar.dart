@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_website/app/theme/app_fonts.dart';
 import 'package:portfolio_website/app/theme/app_colors.dart';
 import 'package:portfolio_website/app/utils/responsive.dart';
 import 'package:portfolio_website/core/services/localization_service.dart';
@@ -122,7 +123,7 @@ class PortfolioNavbar extends GetView<HomeController> {
               return ListTile(
                 title: Text(
                   item.labelKey.tr,
-                  style: GoogleFonts.tajawal(fontWeight: FontWeight.w600),
+                  style: AppFonts.arabic(fontWeight: FontWeight.w600),
                 ),
                 onTap: () {
                   Navigator.pop(ctx);

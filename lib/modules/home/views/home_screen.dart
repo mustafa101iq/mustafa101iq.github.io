@@ -15,59 +15,87 @@ import 'package:portfolio_website/modules/home/widgets/projects_section.dart';
 import 'package:portfolio_website/modules/home/widgets/services_section.dart';
 import 'package:portfolio_website/modules/home/widgets/skills_section.dart';
 
-class HomeScreen extends GetView<HomeController> {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool _showBackground = false;
+  bool _contentReady = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      setState(() => _contentReady = true);
+      Future<void>.delayed(const Duration(milliseconds: 180), () {
+        if (mounted) setState(() => _showBackground = true);
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bg = isDark ? AppColors.voidBg : AppColors.lightBg;
 
     return Scaffold(
-      backgroundColor: isDark ? AppColors.voidBg : AppColors.lightBg,
+      backgroundColor: bg,
       body: Stack(
         children: [
-          Positioned.fill(
-            child: NetworkBackground(isDark: isDark),
-          ),
-          Obx(() {
-            if (controller.isLoading.value) {
-              return Center(
-                child: CircularProgressIndicator(
-                  color: isDark ? AppColors.red : AppColors.lightAccent,
-                ),
-              );
-            }
-
-            return Column(
+          if (_showBackground)
+            Positioned.fill(
+              child: IgnorePointer(
+                child: NetworkBackground(isDark: isDark),
+              ),
+            ),
+          AnimatedOpacity(
+            opacity: _contentReady ? 1 : 0,
+            duration: const Duration(milliseconds: 280),
+            curve: Curves.easeOut,
+            child: const Column(
               children: [
-                const PortfolioNavbar(),
+                PortfolioNavbar(),
                 Expanded(
                   child: SelectionArea(
-                    child: SingleChildScrollView(
-                      controller: controller.scrollController,
-                      physics: const BouncingScrollPhysics(),
-                      child: const Column(
-                        children: [
-                          HeroSection(),
-                          AboutSection(),
-                          SkillsSection(),
-                          ServicesSection(),
-                          ProjectsSection(),
-                          ExperienceSection(),
-                          EducationSection(),
-                          ContactSection(),
-                          FooterSection(),
-                        ],
-                      ),
-                    ),
+                    child: _HomeScrollBody(),
                   ),
                 ),
               ],
-            );
-          }),
+            ),
+          ),
         ],
       ),
       floatingActionButton: const BackToTopButton(),
+    );
+  }
+}
+
+class _HomeScrollBody extends GetView<HomeController> {
+  const _HomeScrollBody();
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      controller: controller.scrollController,
+      physics: const BouncingScrollPhysics(),
+      child: const Column(
+        children: [
+          HeroSection(),
+          AboutSection(),
+          SkillsSection(),
+          ServicesSection(),
+          ProjectsSection(),
+          ExperienceSection(),
+          EducationSection(),
+          ContactSection(),
+          FooterSection(),
+        ],
+      ),
     );
   }
 }

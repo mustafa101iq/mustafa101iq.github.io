@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_website/app/theme/app_fonts.dart';
 import 'package:portfolio_website/app/theme/app_colors.dart';
 import 'package:portfolio_website/core/services/localization_service.dart';
 import 'package:portfolio_website/core/utils/url_helper.dart';
@@ -81,7 +82,7 @@ class ContactSection extends GetView<HomeController> {
                 child: Text(
                   'contact_subtitle'.tr,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.tajawal(
+                  style: AppFonts.arabic(
                     color: isDark ? AppColors.muted : AppColors.lightMuted,
                     fontSize: 15,
                     height: 1.9,
@@ -197,7 +198,7 @@ class _ContactRowState extends State<_ContactRow> {
                         ),
                         Text(
                           widget.value,
-                          style: GoogleFonts.tajawal(
+                          style: AppFonts.arabic(
                             color: widget.isDark
                                 ? AppColors.text
                                 : AppColors.lightText,

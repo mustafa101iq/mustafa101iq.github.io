@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_website/app/theme/app_fonts.dart';
 import 'package:portfolio_website/app/theme/app_colors.dart';
 
 class AppTheme {
@@ -8,7 +9,7 @@ class AppTheme {
 
   static ThemeData get dark {
     final base = ThemeData.dark(useMaterial3: true);
-    final textTheme = GoogleFonts.tajawalTextTheme(base.textTheme).apply(
+    final textTheme = AppFonts.arabicTextTheme(base.textTheme).apply(
       bodyColor: AppColors.muted,
       displayColor: AppColors.text,
     );
@@ -94,7 +95,7 @@ class AppTheme {
 
   static ThemeData get light {
     final base = ThemeData.light(useMaterial3: true);
-    final textTheme = GoogleFonts.tajawalTextTheme(base.textTheme).apply(
+    final textTheme = AppFonts.arabicTextTheme(base.textTheme).apply(
       bodyColor: AppColors.lightMuted,
       displayColor: AppColors.lightText,
     );

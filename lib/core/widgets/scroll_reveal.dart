@@ -6,7 +6,7 @@ class ScrollReveal extends StatefulWidget {
     super.key,
     required this.child,
     this.delay = Duration.zero,
-    this.offset = 36,
+    this.offset = 18,
   });
 
   final Widget child;
@@ -32,7 +32,7 @@ class _ScrollRevealState extends State<ScrollReveal>
     _detectorKey = widget.key ?? UniqueKey();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 700),
+      duration: const Duration(milliseconds: 420),
     );
     _opacity = CurvedAnimation(parent: _controller, curve: Curves.easeOut);
     _slide = Tween<Offset>(

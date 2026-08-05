@@ -6,11 +6,11 @@
     },
     "jobTitle": {
       "en": "Flutter Mobile Application Developer",
-      "ar": "مطوّر تطبيقات جوال بفلاتر"
+      "ar": "مطوّر تطبيقات الهواتف الذكية"
     },
     "shortBio": {
-      "en": "Flutter mobile developer with 10+ years in software — from Android Native to high-performance cross-platform apps shipped to the stores.",
-      "ar": "مطوّر تطبيقات هواتف متخصص في Flutter بخبرة أكثر من عشر سنوات — من Android Native إلى تطبيقات عالية الأداء متعددة المنصات."
+      "en": "Over ten years building production apps for Android and iOS — from native foundations to cross-platform products on the stores.",
+      "ar": "أكثر من عشر سنوات في بناء تطبيقات أندرويد وآيفون جاهزة للإنتاج، من تطبيقات المنصة الواحدة إلى منتجات تعمل على أكثر من نظام ومنشورة على المتاجر."
     },
     "avatarUrl": "assets/images/profile.jpg",
     "yearsOfExperience": 10,
@@ -26,7 +26,7 @@
       "linkedin": "https://www.linkedin.com/in/m.dev97",
       "instagram": "https://www.instagram.com/m.dev97",
       "whatsapp": "https://wa.me/9647715456704",
-      "telegram": "https://t.me/m.dev97",
+      "telegram": "https://t.me/m_dev97",
       "email": "mailto:m.dev2230@gmail.com"
     }
   },
@@ -90,33 +90,8 @@
       "category": {"en": "Core", "ar": "أساسي"}
     },
     {
-      "name": {"en": "Android Native", "ar": "Android Native"},
-      "level": 0.86,
-      "category": {"en": "Core", "ar": "أساسي"}
-    },
-    {
-      "name": {"en": "Java", "ar": "Java"},
-      "level": 0.88,
-      "category": {"en": "Core", "ar": "أساسي"}
-    },
-    {
-      "name": {"en": "Kotlin", "ar": "Kotlin"},
-      "level": 0.85,
-      "category": {"en": "Core", "ar": "أساسي"}
-    },
-    {
       "name": {"en": "GetX", "ar": "GetX"},
       "level": 0.95,
-      "category": {"en": "State & Architecture", "ar": "الحالة والهندسة"}
-    },
-    {
-      "name": {"en": "Provider", "ar": "Provider"},
-      "level": 0.88,
-      "category": {"en": "State & Architecture", "ar": "الحالة والهندسة"}
-    },
-    {
-      "name": {"en": "Bloc", "ar": "Bloc"},
-      "level": 0.84,
       "category": {"en": "State & Architecture", "ar": "الحالة والهندسة"}
     },
     {
@@ -125,9 +100,24 @@
       "category": {"en": "State & Architecture", "ar": "الحالة والهندسة"}
     },
     {
-      "name": {"en": "MVVM", "ar": "MVVM"},
-      "level": 0.88,
-      "category": {"en": "State & Architecture", "ar": "الحالة والهندسة"}
+      "name": {"en": "Dio", "ar": "Dio"},
+      "level": 0.93,
+      "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
+    },
+    {
+      "name": {"en": "REST API", "ar": "REST API"},
+      "level": 0.92,
+      "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
+    },
+    {
+      "name": {"en": "Firebase", "ar": "Firebase"},
+      "level": 0.9,
+      "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
+    },
+    {
+      "name": {"en": "JSON", "ar": "JSON"},
+      "level": 0.94,
+      "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
     },
     {
       "name": {"en": "ScreenUtil", "ar": "ScreenUtil"},
@@ -150,22 +140,47 @@
       "category": {"en": "UI & UX", "ar": "الواجهات"}
     },
     {
-      "name": {"en": "Figma to Flutter", "ar": "من Figma إلى Flutter"},
-      "level": 0.86,
-      "category": {"en": "UI & UX", "ar": "الواجهات"}
+      "name": {"en": "MVC", "ar": "MVC"},
+      "level": 0.9,
+      "category": {"en": "State & Architecture", "ar": "الحالة والهندسة"}
     },
     {
-      "name": {"en": "Dio", "ar": "Dio"},
-      "level": 0.93,
-      "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
+      "name": {"en": "Provider", "ar": "Provider"},
+      "level": 0.88,
+      "category": {"en": "State & Architecture", "ar": "الحالة والهندسة"}
     },
     {
-      "name": {"en": "REST API", "ar": "REST API"},
+      "name": {"en": "Git & GitHub", "ar": "Git وGitHub"},
       "level": 0.92,
-      "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
+      "category": {"en": "Tools & Delivery", "ar": "الأدوات والتسليم"}
     },
     {
-      "name": {"en": "Firebase", "ar": "Firebase"},
+      "name": {"en": "Play Store & App Store", "ar": "Play Store وApp Store"},
+      "level": 0.91,
+      "category": {"en": "Tools & Delivery", "ar": "الأدوات والتسليم"}
+    },
+    {
+      "name": {"en": "Android Native", "ar": "Android Native"},
+      "level": 0.86,
+      "category": {"en": "Core", "ar": "أساسي"}
+    },
+    {
+      "name": {"en": "Java", "ar": "Java"},
+      "level": 0.88,
+      "category": {"en": "Core", "ar": "أساسي"}
+    },
+    {
+      "name": {"en": "Kotlin", "ar": "Kotlin"},
+      "level": 0.85,
+      "category": {"en": "Core", "ar": "أساسي"}
+    },
+    {
+      "name": {"en": "Bloc", "ar": "Bloc"},
+      "level": 0.84,
+      "category": {"en": "State & Architecture", "ar": "الحالة والهندسة"}
+    },
+    {
+      "name": {"en": "GetStorage", "ar": "GetStorage"},
       "level": 0.9,
       "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
     },
@@ -175,19 +190,14 @@
       "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
     },
     {
-      "name": {"en": "GetStorage", "ar": "GetStorage"},
-      "level": 0.9,
-      "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
-    },
-    {
       "name": {"en": "OneSignal / Push", "ar": "OneSignal / إشعارات"},
       "level": 0.85,
       "category": {"en": "Networking & Data", "ar": "الشبكات والبيانات"}
     },
     {
-      "name": {"en": "ASP.NET (.NET)", "ar": "ASP.NET (.NET)"},
-      "level": 0.8,
-      "category": {"en": "Backend", "ar": "الخلفية"}
+      "name": {"en": "Figma to Flutter", "ar": "من Figma إلى Flutter"},
+      "level": 0.86,
+      "category": {"en": "UI & UX", "ar": "الواجهات"}
     },
     {
       "name": {"en": "Google Maps", "ar": "خرائط جوجل"},
@@ -200,14 +210,9 @@
       "category": {"en": "Integrations", "ar": "التكاملات"}
     },
     {
-      "name": {"en": "Git & GitHub", "ar": "Git وGitHub"},
-      "level": 0.92,
-      "category": {"en": "Tools & Delivery", "ar": "الأدوات والتسليم"}
-    },
-    {
-      "name": {"en": "Play Store & App Store", "ar": "Play Store وApp Store"},
-      "level": 0.91,
-      "category": {"en": "Tools & Delivery", "ar": "الأدوات والتسليم"}
+      "name": {"en": "ASP.NET (.NET)", "ar": "ASP.NET (.NET)"},
+      "level": 0.8,
+      "category": {"en": "Backend", "ar": "الخلفية"}
     },
     {
       "name": {"en": "CI / Release Workflow", "ar": "CI / سير الإطلاق"},
@@ -386,12 +391,12 @@
         "ar": "جامعة ديالى — كلية العلوم"
       },
       "period": {
-        "en": "—",
-        "ar": "—"
+        "en": "2016 — 2020",
+        "ar": "2016 — 2020"
       },
       "description": {
-        "en": "Bachelor of Computer Science from the College of Science, University of Diyala.",
-        "ar": "بكالوريوس علوم حاسوب من كلية العلوم في جامعة ديالى."
+        "en": "Graduated first in the department. Graduation project awarded first place.",
+        "ar": "الأول على القسم. مشروع التخرج حاصل على المركز الأول."
       }
     }
   ]

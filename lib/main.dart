@@ -7,7 +7,9 @@ import 'package:portfolio_website/app/routes/app_pages.dart';
 import 'package:portfolio_website/app/theme/app_theme.dart';
 import 'package:portfolio_website/app/translations/app_translations.dart';
 import 'package:portfolio_website/app/utils/responsive.dart';
+import 'package:portfolio_website/core/services/font_bootstrap.dart';
 import 'package:portfolio_website/core/services/localization_service.dart';
+import 'package:portfolio_website/core/services/portfolio_bootstrap.dart';
 import 'package:portfolio_website/core/services/theme_service.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -16,6 +18,10 @@ Future<void> main() async {
   VisibilityDetectorController.instance.updateInterval =
       const Duration(milliseconds: 120);
   await GetStorage.init();
+  await Future.wait([
+    PortfolioBootstrap.load(),
+    FontBootstrap.load(),
+  ]);
   final themeService = await ThemeService().init();
   final localizationService = await LocalizationService().init();
   Get.put<ThemeService>(themeService, permanent: true);
@@ -52,7 +58,7 @@ class PortfolioApp extends StatelessWidget {
                 themeMode: Get.find<ThemeService>().themeMode,
                 translations: AppTranslations(),
                 locale: locale,
-                fallbackLocale: LocalizationService.english,
+                fallbackLocale: LocalizationService.arabic,
                 initialBinding: AppBinding(),
                 initialRoute: AppPages.initial,
                 getPages: AppPages.routes,

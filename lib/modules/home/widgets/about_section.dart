@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_website/app/theme/app_fonts.dart';
 import 'package:portfolio_website/app/theme/app_colors.dart';
 import 'package:portfolio_website/core/services/localization_service.dart';
 import 'package:portfolio_website/core/widgets/glass_card.dart';
@@ -79,7 +79,7 @@ class AboutSection extends GetView<HomeController> {
                       accent: accent,
                       child: Text(
                         about.specialization.text,
-                        style: GoogleFonts.tajawal(
+                        style: AppFonts.arabic(
                           color: text,
                           fontSize: 15.5,
                           fontWeight: FontWeight.w300,
@@ -92,7 +92,7 @@ class AboutSection extends GetView<HomeController> {
                       accent: accent,
                       child: Text(
                         '${about.intro.text}\n\n${about.workStyle.text}',
-                        style: GoogleFonts.tajawal(
+                        style: AppFonts.arabic(
                           color: text,
                           fontSize: 15.5,
                           fontWeight: FontWeight.w300,
@@ -112,7 +112,7 @@ class AboutSection extends GetView<HomeController> {
                                 padding: EdgeInsets.only(bottom: 8.h),
                                 child: Text(
                                   '•  ${item.text}',
-                                  style: GoogleFonts.tajawal(
+                                  style: AppFonts.arabic(
                                     color: text,
                                     fontSize: 15.5,
                                     fontWeight: FontWeight.w300,
@@ -161,7 +161,7 @@ class _InfoRow extends StatelessWidget {
             width: 110.w,
             child: Text(
               label,
-              style: GoogleFonts.tajawal(
+              style: AppFonts.arabic(
                 color: muted,
                 fontSize: 14.5,
                 fontWeight: FontWeight.w500,
@@ -172,7 +172,7 @@ class _InfoRow extends StatelessWidget {
           Expanded(
             child: Text(
               value,
-              style: GoogleFonts.tajawal(
+              style: AppFonts.arabic(
                 color: text,
                 fontSize: 15.5,
                 fontWeight: FontWeight.w400,
@@ -221,7 +221,7 @@ class _CvBlock extends StatelessWidget {
         children: [
           Text(
             title,
-            style: GoogleFonts.tajawal(
+            style: AppFonts.arabic(
               color: accent,
               fontSize: 14,
               fontWeight: FontWeight.w700,

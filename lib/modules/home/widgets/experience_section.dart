@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_website/app/theme/app_fonts.dart';
 import 'package:portfolio_website/app/theme/app_colors.dart';
 import 'package:portfolio_website/core/services/localization_service.dart';
 import 'package:portfolio_website/core/widgets/scroll_reveal.dart';
@@ -87,7 +88,7 @@ class _TimelineItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final periodStyle = isArabic
-        ? GoogleFonts.tajawal(
+        ? AppFonts.arabic(
             color: accent,
             fontSize: 13,
             fontWeight: FontWeight.w600,
@@ -131,7 +132,7 @@ class _TimelineItem extends StatelessWidget {
                 SizedBox(height: 8.h),
                 Text(
                   item.role.text,
-                  style: GoogleFonts.tajawal(
+                  style: AppFonts.arabic(
                     color: isDark
                         ? AppColors.lightestSlate
                         : AppColors.lightText,
@@ -143,7 +144,7 @@ class _TimelineItem extends StatelessWidget {
                 SizedBox(height: 4.h),
                 Text(
                   item.company.text,
-                  style: GoogleFonts.tajawal(
+                  style: AppFonts.arabic(
                     color: isDark
                         ? AppColors.lightSlate
                         : AppColors.lightMuted,
@@ -155,7 +156,7 @@ class _TimelineItem extends StatelessWidget {
                 SizedBox(height: 10.h),
                 Text(
                   item.description.text,
-                  style: GoogleFonts.tajawal(
+                  style: AppFonts.arabic(
                     color: isDark ? AppColors.slate : AppColors.lightMuted,
                     fontSize: 14,
                     height: 1.7,

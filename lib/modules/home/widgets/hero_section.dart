@@ -3,11 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_website/app/theme/app_fonts.dart';
 import 'package:portfolio_website/app/theme/app_colors.dart';
 import 'package:portfolio_website/app/utils/responsive.dart';
 import 'package:portfolio_website/core/services/localization_service.dart';
 import 'package:portfolio_website/core/utils/url_helper.dart';
-import 'package:portfolio_website/core/widgets/scroll_reveal.dart';
 import 'package:portfolio_website/core/widgets/section_container.dart';
 import 'package:portfolio_website/modules/home/controllers/home_controller.dart';
 import 'package:portfolio_website/modules/home/models/portfolio_models.dart';
@@ -34,167 +34,165 @@ class HeroSection extends GetView<HomeController> {
           context.horizontalPadding,
           context.isMobileLayout ? 48.h : 64,
         ),
-        child: ScrollReveal(
-          child: Column(
-            children: [
-              _AvatarRing(profile: profile, accent: accent, isDark: isDark),
-              SizedBox(height: 38.h),
-              Text(
-                'hi_im'.trParams({'name': profile.fullName.text}),
+        child: Column(
+          children: [
+            _AvatarRing(profile: profile, accent: accent, isDark: isDark),
+            SizedBox(height: 38.h),
+            Text(
+              'hi_im'.tr,
+              textAlign: TextAlign.center,
+              style: Get.find<LocalizationService>().isArabic
+                  ? AppFonts.arabic(
+                      color: isDark ? AppColors.redGlow : AppColors.lightAccent,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1,
+                    )
+                  : GoogleFonts.orbitron(
+                      color: isDark ? AppColors.redGlow : AppColors.lightAccent,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 5,
+                      shadows: [
+                        Shadow(
+                          color: accent.withValues(alpha: 0.55),
+                          blurRadius: 18,
+                        ),
+                      ],
+                    ),
+            ),
+            SizedBox(height: 14.h),
+            Text(
+              'job_title'.tr,
+              textAlign: TextAlign.center,
+              style: Get.find<LocalizationService>().isArabic
+                  ? AppFonts.arabic(
+                      color: isDark ? AppColors.pureWhite : AppColors.lightText,
+                      fontSize: context.isMobileLayout ? 30.sp : 48,
+                      fontWeight: FontWeight.w800,
+                      height: 1.25,
+                    )
+                  : GoogleFonts.orbitron(
+                      color: isDark ? AppColors.pureWhite : AppColors.lightText,
+                      fontSize: context.isMobileLayout ? 34.sp : 56,
+                      fontWeight: FontWeight.w800,
+                      height: 1.1,
+                      letterSpacing: 1,
+                      shadows: [
+                        Shadow(
+                          color: accent.withValues(alpha: 0.35),
+                          blurRadius: 30,
+                        ),
+                      ],
+                    ),
+            ),
+            SizedBox(height: 18.h),
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 440),
+              child: Text(
+                'short_bio'.tr,
                 textAlign: TextAlign.center,
-                style: Get.find<LocalizationService>().isArabic
-                    ? GoogleFonts.tajawal(
-                        color: isDark ? AppColors.redGlow : AppColors.lightAccent,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        letterSpacing: 1,
-                      )
-                    : GoogleFonts.orbitron(
-                        color: isDark ? AppColors.redGlow : AppColors.lightAccent,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: 5,
-                        shadows: [
-                          Shadow(
-                            color: accent.withValues(alpha: 0.55),
-                            blurRadius: 18,
-                          ),
-                        ],
-                      ),
-              ),
-              SizedBox(height: 14.h),
-              Text(
-                'job_title'.tr,
-                textAlign: TextAlign.center,
-                style: Get.find<LocalizationService>().isArabic
-                    ? GoogleFonts.tajawal(
-                        color: isDark ? AppColors.pureWhite : AppColors.lightText,
-                        fontSize: context.isMobileLayout ? 30.sp : 48,
-                        fontWeight: FontWeight.w800,
-                        height: 1.25,
-                      )
-                    : GoogleFonts.orbitron(
-                        color: isDark ? AppColors.pureWhite : AppColors.lightText,
-                        fontSize: context.isMobileLayout ? 34.sp : 56,
-                        fontWeight: FontWeight.w800,
-                        height: 1.1,
-                        letterSpacing: 1,
-                        shadows: [
-                          Shadow(
-                            color: accent.withValues(alpha: 0.35),
-                            blurRadius: 30,
-                          ),
-                        ],
-                      ),
-              ),
-              SizedBox(height: 18.h),
-              ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 440),
-                child: Text(
-                  'short_bio'.tr,
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.tajawal(
-                    color: isDark ? AppColors.muted : AppColors.lightMuted,
-                    fontSize: 16,
-                    height: 1.9,
-                  ),
+                style: AppFonts.arabic(
+                  color: isDark ? AppColors.muted : AppColors.lightMuted,
+                  fontSize: 16,
+                  height: 1.9,
                 ),
               ),
-              SizedBox(height: 36.h),
-              Wrap(
-                spacing: 16,
-                runSpacing: 16,
-                alignment: WrapAlignment.center,
-                children: [
+            ),
+            SizedBox(height: 36.h),
+            Wrap(
+              spacing: 16,
+              runSpacing: 16,
+              alignment: WrapAlignment.center,
+              children: [
+                _SocialCircle(
+                  icon: FontAwesomeIcons.github,
+                  url: profile.social.github,
+                  isDark: isDark,
+                ),
+                _SocialCircle(
+                  icon: FontAwesomeIcons.linkedin,
+                  url: profile.social.linkedin,
+                  isDark: isDark,
+                ),
+                if (profile.social.instagram.isNotEmpty)
                   _SocialCircle(
-                    icon: FontAwesomeIcons.github,
-                    url: profile.social.github,
+                    icon: FontAwesomeIcons.instagram,
+                    url: profile.social.instagram,
                     isDark: isDark,
                   ),
-                  _SocialCircle(
-                    icon: FontAwesomeIcons.linkedin,
-                    url: profile.social.linkedin,
-                    isDark: isDark,
-                  ),
-                  if (profile.social.instagram.isNotEmpty)
-                    _SocialCircle(
-                      icon: FontAwesomeIcons.instagram,
-                      url: profile.social.instagram,
-                      isDark: isDark,
-                    ),
-                  _SocialCircle(
-                    icon: FontAwesomeIcons.whatsapp,
-                    url: profile.social.whatsapp,
-                    isDark: isDark,
-                  ),
-                  _SocialCircle(
-                    icon: FontAwesomeIcons.telegram,
-                    url: profile.social.telegram,
-                    isDark: isDark,
-                  ),
-                  _SocialCircle(
-                    icon: FontAwesomeIcons.envelope,
-                    url: profile.social.email,
-                    isDark: isDark,
-                  ),
-                ],
-              ),
-              SizedBox(height: 40.h),
-              DecoratedBox(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  gradient: LinearGradient(
-                    colors: [
-                      accent,
-                      isDark ? const Color(0xFFB81C17) : const Color(0xFFB81C17),
-                    ],
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: accent.withValues(alpha: 0.4),
-                      blurRadius: 30,
-                      offset: const Offset(0, 8),
-                    ),
+                _SocialCircle(
+                  icon: FontAwesomeIcons.whatsapp,
+                  url: profile.social.whatsapp,
+                  isDark: isDark,
+                ),
+                _SocialCircle(
+                  icon: FontAwesomeIcons.telegram,
+                  url: profile.social.telegram,
+                  isDark: isDark,
+                ),
+                _SocialCircle(
+                  icon: FontAwesomeIcons.envelope,
+                  url: profile.social.email,
+                  isDark: isDark,
+                ),
+              ],
+            ),
+            SizedBox(height: 40.h),
+            DecoratedBox(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40),
+                gradient: LinearGradient(
+                  colors: [
+                    accent,
+                    isDark ? const Color(0xFFB81C17) : const Color(0xFFB81C17),
                   ],
                 ),
-                child: ElevatedButton(
-                  onPressed: controller.downloadCv,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    shadowColor: Colors.transparent,
-                    foregroundColor: AppColors.pureWhite,
-                  ),
-                  child: Text('download_cv'.tr),
-                ),
-              ),
-              SizedBox(height: 56.h),
-              Column(
-                children: [
-                  Text(
-                    'scroll'.tr,
-                    style: GoogleFonts.rajdhani(
-                      color: isDark ? AppColors.mutedDim : AppColors.lightMuted,
-                      fontSize: 12,
-                      letterSpacing: 3,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  SizedBox(height: 10.h),
-                  Container(
-                    width: 1,
-                    height: 34,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [accent, accent.withValues(alpha: 0)],
-                      ),
-                    ),
+                boxShadow: [
+                  BoxShadow(
+                    color: accent.withValues(alpha: 0.4),
+                    blurRadius: 30,
+                    offset: const Offset(0, 8),
                   ),
                 ],
               ),
-            ],
-          ),
+              child: ElevatedButton(
+                onPressed: controller.downloadCv,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  shadowColor: Colors.transparent,
+                  foregroundColor: AppColors.pureWhite,
+                ),
+                child: Text('download_cv'.tr),
+              ),
+            ),
+            SizedBox(height: 56.h),
+            Column(
+              children: [
+                Text(
+                  'scroll'.tr,
+                  style: GoogleFonts.rajdhani(
+                    color: isDark ? AppColors.mutedDim : AppColors.lightMuted,
+                    fontSize: 12,
+                    letterSpacing: 3,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(height: 10.h),
+                Container(
+                  width: 1,
+                  height: 34,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [accent, accent.withValues(alpha: 0)],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       );
     });
@@ -272,24 +270,24 @@ class _AvatarRingState extends State<_AvatarRing>
       clipBehavior: Clip.antiAlias,
       child: widget.profile.avatarUrl.isNotEmpty
           ? (widget.profile.avatarUrl.startsWith('assets/')
-              ? Transform.scale(
-                  scale: 1.35,
-                  child: Image.asset(
-                    widget.profile.avatarUrl,
-                    fit: BoxFit.cover,
-                    alignment: const Alignment(0, -0.45),
-                    filterQuality: FilterQuality.high,
-                  ),
-                )
-              : Transform.scale(
-                  scale: 1.35,
-                  child: Image.network(
-                    widget.profile.avatarUrl,
-                    fit: BoxFit.cover,
-                    alignment: const Alignment(0, -0.45),
-                    filterQuality: FilterQuality.high,
-                  ),
-                ))
+                ? Transform.scale(
+                    scale: 1.35,
+                    child: Image.asset(
+                      widget.profile.avatarUrl,
+                      fit: BoxFit.cover,
+                      alignment: const Alignment(0, -0.45),
+                      filterQuality: FilterQuality.high,
+                    ),
+                  )
+                : Transform.scale(
+                    scale: 1.35,
+                    child: Image.network(
+                      widget.profile.avatarUrl,
+                      fit: BoxFit.cover,
+                      alignment: const Alignment(0, -0.45),
+                      filterQuality: FilterQuality.high,
+                    ),
+                  ))
           : Container(
               color: widget.isDark ? AppColors.panel : AppColors.lightBg,
               alignment: Alignment.center,
@@ -324,9 +322,7 @@ class _AvatarRingState extends State<_AvatarRing>
                       width: size + 56,
                       height: size + 56,
                       child: const CustomPaint(
-                        painter: _DashedCirclePainter(
-                          color: AppColors.redLine,
-                        ),
+                        painter: _DashedCirclePainter(color: AppColors.redLine),
                       ),
                     ),
                   ),
@@ -337,7 +333,10 @@ class _AvatarRingState extends State<_AvatarRing>
                       height: size + 28,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        border: Border.all(color: AppColors.redDeep, width: 1.5),
+                        border: Border.all(
+                          color: AppColors.redDeep,
+                          width: 1.5,
+                        ),
                       ),
                     ),
                   ),
@@ -422,9 +421,7 @@ class _SocialCircleState extends State<_SocialCircle> {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: accent.withValues(alpha: _hovered ? 0.18 : 0.06),
-          border: Border.all(
-            color: _hovered ? accent : AppColors.redDeep,
-          ),
+          border: Border.all(color: _hovered ? accent : AppColors.redDeep),
           boxShadow: _hovered
               ? [
                   BoxShadow(

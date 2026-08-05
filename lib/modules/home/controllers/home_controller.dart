@@ -1,8 +1,6 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:portfolio_website/core/services/portfolio_bootstrap.dart';
 import 'package:portfolio_website/core/utils/url_helper.dart';
 import 'package:portfolio_website/core/widgets/cached_asset_image.dart';
 import 'package:portfolio_website/modules/home/models/portfolio_models.dart';
@@ -30,7 +28,7 @@ class HomeController extends GetxController {
   final GlobalKey educationKey = GlobalKey();
   final GlobalKey contactKey = GlobalKey();
 
-  final RxBool isLoading = true.obs;
+  final RxBool isLoading = false.obs;
   final RxBool showBackToTop = false.obs;
   final RxBool isNavScrolled = false.obs;
   final Rx<PortfolioSection> activeSection = PortfolioSection.home.obs;
@@ -68,7 +66,18 @@ class HomeController extends GetxController {
   void onInit() {
     super.onInit();
     scrollController.addListener(_onScroll);
-    loadData();
+    _hydrateFromBootstrap();
+    if (portfolio.value == null) {
+      loadData();
+    }
+  }
+
+  void _hydrateFromBootstrap() {
+    final cached = PortfolioBootstrap.portfolio;
+    if (cached == null) return;
+    portfolio.value = cached;
+    projects.assignAll(PortfolioBootstrap.projects);
+    isLoading.value = false;
   }
 
   DateTime? _lastSectionCheck;
@@ -76,21 +85,10 @@ class HomeController extends GetxController {
   Future<void> loadData() async {
     isLoading.value = true;
     try {
-      final results = await Future.wait([
-        rootBundle.loadString('assets/data/portfolio.json'),
-        rootBundle.loadString('assets/data/projects.json'),
-      ]);
-      portfolio.value = PortfolioData.fromJson(
-        jsonDecode(results[0]) as Map<String, dynamic>,
-      );
-      projects.assignAll(
-        (jsonDecode(results[1]) as List<dynamic>)
-            .map((e) => ProjectModel.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      );
+      await PortfolioBootstrap.load();
+      _hydrateFromBootstrap();
     } catch (e) {
       debugPrint('Failed to load portfolio data: $e');
-    } finally {
       isLoading.value = false;
     }
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_website/app/theme/app_fonts.dart';
 import 'package:portfolio_website/app/theme/app_colors.dart';
 import 'package:portfolio_website/app/utils/responsive.dart';
 
@@ -49,7 +50,7 @@ class SectionTitle extends StatelessWidget {
         Flexible(
           child: Text(
             title,
-            style: GoogleFonts.tajawal(
+            style: AppFonts.arabic(
               color: titleColor,
               fontSize: context.isMobileLayout ? 26.sp : 32,
               fontWeight: FontWeight.w900,

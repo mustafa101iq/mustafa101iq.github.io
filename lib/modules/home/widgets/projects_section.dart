@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_website/app/theme/app_fonts.dart';
 import 'package:portfolio_website/app/theme/app_colors.dart';
 import 'package:portfolio_website/app/utils/responsive.dart';
 import 'package:portfolio_website/core/services/localization_service.dart';
@@ -12,6 +13,8 @@ import 'package:portfolio_website/core/widgets/section_container.dart';
 import 'package:portfolio_website/core/widgets/section_title.dart';
 import 'package:portfolio_website/modules/home/controllers/home_controller.dart';
 import 'package:portfolio_website/modules/home/models/project_model.dart';
+
+const _phoneScreenshotAspect = 472 / 1024;
 
 class ProjectsSection extends GetView<HomeController> {
   const ProjectsSection({super.key});
@@ -35,7 +38,7 @@ class ProjectsSection extends GetView<HomeController> {
             ScrollReveal(
               child: Text(
                 'projects_subtitle'.tr,
-                style: GoogleFonts.tajawal(
+                style: AppFonts.arabic(
                   color: isDark ? AppColors.muted : AppColors.lightMuted,
                   fontSize: 15,
                   height: 1.8,
@@ -195,9 +198,12 @@ class _ProjectVisualState extends State<_ProjectVisual> {
   Widget build(BuildContext context) {
     final images = widget.project.previewImages;
     final isCover = widget.project.isCoverVisual;
+    final isMobile = context.isMobileLayout;
+    final phoneW = isMobile ? 156.0 : 176.0;
+    final phoneH = phoneW / _phoneScreenshotAspect;
     final height = isCover
-        ? (context.isMobileLayout ? 420.h : 520.0)
-        : (context.isMobileLayout ? 280.h : 380.0);
+        ? (isMobile ? 420.h : 520.0)
+        : phoneH + (isMobile ? 56 : 48);
 
     return AnimatedContainer(
       duration: const Duration(milliseconds: 280),
@@ -315,8 +321,8 @@ class _DeviceGallery extends StatelessWidget {
       [const Color(0xFF3D2A6E), const Color(0xFF140F24)],
     ];
     final palette = palettes[index % palettes.length];
-    final phoneW = context.isMobileLayout ? 148.w : 176.0;
-    final phoneH = context.isMobileLayout ? 300.h : 340.0;
+    final isMobile = context.isMobileLayout;
+    final phoneW = isMobile ? 156.0 : 176.0;
 
     return Stack(
       children: [
@@ -355,42 +361,48 @@ class _DeviceGallery extends StatelessWidget {
           ),
         ),
         Center(
-          child: Container(
-            width: phoneW,
-            height: phoneH,
-            padding: const EdgeInsets.all(7),
-            decoration: BoxDecoration(
-              color: const Color(0xFF0A0A0C),
-              borderRadius: BorderRadius.circular(28),
-              border: Border.all(
-                color: Colors.white.withValues(alpha: 0.18),
-                width: 1.5,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.45),
-                  blurRadius: 28,
-                  offset: const Offset(0, 18),
-                ),
-                BoxShadow(
-                  color: accent.withValues(alpha: 0.2),
-                  blurRadius: 40,
-                  spreadRadius: -4,
-                ),
-              ],
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(22),
-              child: PageView.builder(
-                controller: pageController,
-                itemCount: images.length,
-                onPageChanged: onPageChanged,
-                itemBuilder: (_, i) => CachedAssetImage(
-                  images[i],
-                  fit: BoxFit.cover,
-                  alignment: Alignment.topCenter,
-                  displayWidth: 200,
-                  displayHeight: 400,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 22),
+            child: SizedBox(
+              width: phoneW,
+              child: AspectRatio(
+                aspectRatio: _phoneScreenshotAspect,
+                child: Container(
+                  padding: const EdgeInsets.all(7),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF0A0A0C),
+                    borderRadius: BorderRadius.circular(28),
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.18),
+                      width: 1.5,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.45),
+                        blurRadius: 28,
+                        offset: const Offset(0, 18),
+                      ),
+                      BoxShadow(
+                        color: accent.withValues(alpha: 0.2),
+                        blurRadius: 40,
+                        spreadRadius: -4,
+                      ),
+                    ],
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(22),
+                    child: PageView.builder(
+                      controller: pageController,
+                      itemCount: images.length,
+                      onPageChanged: onPageChanged,
+                      itemBuilder: (_, i) => CachedAssetImage(
+                        images[i],
+                        fit: BoxFit.contain,
+                        alignment: Alignment.center,
+                        displayWidth: phoneW,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -399,7 +411,7 @@ class _DeviceGallery extends StatelessWidget {
         Positioned(
           left: 0,
           right: 0,
-          bottom: 14,
+          bottom: 10,
           child: _GalleryDots(
             count: images.length,
             index: page,
@@ -502,7 +514,7 @@ class _ProjectDetails extends StatelessWidget {
         SizedBox(height: 12.h),
         Text(
           project.title.text,
-          style: GoogleFonts.tajawal(
+          style: AppFonts.arabic(
             color: isDark ? AppColors.lightestSlate : AppColors.lightText,
             fontSize: context.isMobileLayout ? 24.sp : 30,
             fontWeight: FontWeight.w700,
@@ -512,7 +524,7 @@ class _ProjectDetails extends StatelessWidget {
         SizedBox(height: 12.h),
         Text(
           project.description.text,
-          style: GoogleFonts.tajawal(
+          style: AppFonts.arabic(
             color: isDark ? AppColors.lightSlate : AppColors.lightMuted,
             fontSize: 15,
             height: 1.7,
@@ -535,7 +547,7 @@ class _ProjectDetails extends StatelessWidget {
                   ),
                   child: Text(
                     tech.text,
-                    style: GoogleFonts.tajawal(
+                    style: AppFonts.arabic(
                       color: accent,
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
@@ -637,7 +649,7 @@ class _PreviewButtonState extends State<_PreviewButton> {
               SizedBox(width: 10.w),
               Text(
                 'live_demo'.tr,
-                style: GoogleFonts.tajawal(
+                style: AppFonts.arabic(
                   color: Colors.white,
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
@@ -710,7 +722,7 @@ class _GhostButtonState extends State<_GhostButton> {
               SizedBox(width: 8.w),
               Text(
                 widget.label,
-                style: GoogleFonts.tajawal(
+                style: AppFonts.arabic(
                   color: fg,
                   fontSize: 13,
                   fontWeight: FontWeight.w600,

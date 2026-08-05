@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <base href="$FLUTTER_BASE_HREF">
 
@@ -34,26 +34,70 @@
     body {
       margin: 0;
       background: #0a0403;
-      overflow-x: hidden;
+      overflow: hidden;
     }
-    .loading {
+    .boot {
+      position: fixed;
+      inset: 0;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      color: #ff4438;
-      font-family: system-ui, sans-serif;
-      letter-spacing: 0.2em;
-      font-size: 13px;
+      gap: 18px;
+      background: #0a0403;
+      z-index: 9999;
+      transition: opacity 0.35s ease;
+    }
+    .boot.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .ring {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid rgba(232, 48, 42, 0.15);
+      border-top-color: #e8302a;
+      animation: spin 0.9s linear infinite;
+      will-change: transform;
+    }
+    .mark {
+      position: absolute;
+      font: 700 12px/1 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.08em;
+      color: #e8302a;
+    }
+    .wrap {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+    }
+    .label {
+      color: #7a5f5c;
+      font: 600 11px/1 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.35em;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
-  <div class="loading" id="loading">Loading Portfolio...</div>
+  <div class="boot" id="loading">
+    <div class="wrap">
+      <div class="ring"></div>
+      <span class="mark">MQ</span>
+    </div>
+    <div class="label">LOADING</div>
+  </div>
   <script>
     window.addEventListener('flutter-first-frame', function () {
       var el = document.getElementById('loading');
-      if (el) el.remove();
+      if (!el) return;
+      el.classList.add('hide');
+      setTimeout(function () { el.remove(); }, 380);
     });
   </script>
   <script src="flutter_bootstrap.js" async></script>

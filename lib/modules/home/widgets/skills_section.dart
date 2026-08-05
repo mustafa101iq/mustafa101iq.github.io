@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:portfolio_website/core/services/localization_service.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_website/app/theme/app_fonts.dart';
 import 'package:portfolio_website/app/theme/app_colors.dart';
 import 'package:portfolio_website/core/widgets/glass_card.dart';
 import 'package:portfolio_website/core/widgets/scroll_reveal.dart';
@@ -54,7 +54,7 @@ class SkillsSection extends GetView<HomeController> {
                           ),
                           child: Text(
                             skill.name.text,
-                            style: GoogleFonts.tajawal(
+                            style: AppFonts.arabic(
                               color: isDark ? AppColors.text : AppColors.lightText,
                               fontSize: 14,
                               fontWeight: FontWeight.w600,

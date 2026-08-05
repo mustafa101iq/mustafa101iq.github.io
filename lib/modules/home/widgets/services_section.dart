@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:portfolio_website/core/services/localization_service.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_website/app/theme/app_fonts.dart';
 import 'package:portfolio_website/app/theme/app_colors.dart';
 import 'package:portfolio_website/app/utils/responsive.dart';
 import 'package:portfolio_website/core/widgets/glass_card.dart';
@@ -53,7 +53,7 @@ class ServicesSection extends GetView<HomeController> {
             ScrollReveal(
               child: Text(
                 'services_subtitle'.tr,
-                style: GoogleFonts.tajawal(
+                style: AppFonts.arabic(
                   color: isDark ? AppColors.muted : AppColors.lightMuted,
                   fontSize: 15,
                   height: 1.8,
@@ -137,7 +137,7 @@ class _ServiceCard extends StatelessWidget {
           SizedBox(height: 24.h),
           Text(
             service.title.text,
-            style: GoogleFonts.tajawal(
+            style: AppFonts.arabic(
               color: isDark ? AppColors.lightestSlate : AppColors.lightText,
               fontSize: 17,
               fontWeight: FontWeight.w700,
@@ -147,7 +147,7 @@ class _ServiceCard extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             service.description.text,
-            style: GoogleFonts.tajawal(
+            style: AppFonts.arabic(
               color: isDark ? AppColors.lightSlate : AppColors.lightMuted,
               fontSize: 14,
               height: 1.7,
