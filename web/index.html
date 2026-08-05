@@ -23,6 +23,9 @@
   <meta name="twitter:description" content="Professional Flutter developer crafting polished mobile experiences for Android & iOS.">
 
   <meta name="theme-color" content="#0a0403">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Mustafa Q. Yassin">
@@ -93,6 +96,33 @@
     <div class="label">LOADING</div>
   </div>
   <script>
+    (async function () {
+      var BUILD = '1.0.1+2';
+      var KEY = 'pf_build';
+      var prev = null;
+      try { prev = localStorage.getItem(KEY); } catch (e) {}
+      try {
+        if ('serviceWorker' in navigator) {
+          var regs = await navigator.serviceWorker.getRegistrations();
+          for (var i = 0; i < regs.length; i++) await regs[i].unregister();
+        }
+        if (window.caches) {
+          var keys = await caches.keys();
+          await Promise.all(keys.map(function (k) { return caches.delete(k); }));
+        }
+      } catch (e) {}
+      if (prev !== BUILD) {
+        try {
+          localStorage.clear();
+          sessionStorage.clear();
+          localStorage.setItem(KEY, BUILD);
+        } catch (e) {}
+        if (prev) {
+          location.reload();
+          return;
+        }
+      }
+    })();
     window.addEventListener('flutter-first-frame', function () {
       var el = document.getElementById('loading');
       if (!el) return;
